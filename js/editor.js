@@ -30,11 +30,11 @@ function stopEditing() {
 /// Function to change the show status of the div
 function changeShowStatus() {
   let showStatus = this.getAttribute("data-show-status");
-  if (showStatus){
+  if (showStatus) {
     this.textContent = showStatus === "true" ? "Hide" : "Show";
     this.setAttribute("data-show-status", showStatus === "true" ? "false" : "true");
   }
-  else{
+  else {
     this.textContent = "Hide";
     this.setAttribute("data-show-status", "false");
   }
@@ -43,11 +43,11 @@ function changeShowStatus() {
   //reduce opacitiy of all children
   let children = div.childNodes;
   children.forEach(function (child) {
-    if (child.style){
-  if (!showStatus || showStatus === "true")
-    child.style.opacity = "0.25";
-  else
-  child.style.opacity = "1";
+    if (child.style) {
+      if (!showStatus || showStatus === "true")
+        child.style.opacity = "0.25";
+      else
+        child.style.opacity = "1";
     }
   });
   //TODO call the API to update the show status
